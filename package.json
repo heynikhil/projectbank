@@ -1,0 +1,32 @@
+{
+  "name": "Projectbank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "^0.1.1",
+    "cors": "*",
+    "crypto": "^1.0.1",
+    "express": "*",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "*",
+    "method-override": "^2.3.10",
+    "mongoose": "*",
+    "nodemailer": "^4.4.2",
+    "passport": "*",
+    "passport-jwt": "*",
+    "passport-local": "^1.0.0",
+    "request": "^2.83.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

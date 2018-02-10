@@ -1,0 +1,45 @@
+
+<form class="form-signin" action="/users/register" method="POST">
+  <div class="text-center mb-4">
+    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Residential and Commercial Property Evaluation System</h1>
+  </div>
+
+  <div class="form-label-group">
+    <input type="text" name="name" id="inputName" class="form-control" placeholder="Full Name" required autofocus>
+    <label for="inputName">Full Name</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="text" name="mobile" id="inputMobile" class="form-control" placeholder="Mobile Number" required autofocus>
+    <label for="inputMobile">Mobile Number</label>
+    <small id="msg3"></small>
+  </div>
+
+  <div class="form-label-group">
+    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputEmail">Email address</label>
+    <small id="msg2"></small>
+  </div>
+
+  <div class="form-label-group">
+    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <label for="inputPassword">Password</label>
+    <small id="pwC"></small>
+  </div>
+
+  <div class="form-label-group">
+    <input type="password" name="password2" id="inputPassword2" class="form-control" placeholder="Confirm Password" required>
+    <label for="inputPassword2">Confirm Password</label>
+    <small id="message" ></small>
+  </div>
+
+  <div class="form-lable-group">
+      <div name="" class="g-recaptcha" data-sitekey="6LciSUMUAAAAAGDqv-FAh5Dl0i4GoVk7IE4yOzAC"></div>
+  </div>
+  <br>
+  <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">Sign Up</button>
+    <p class='mb-3'>Already have an account ?
+      <a href="/users/login"> Sign In </a>now!</p>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+</form>
