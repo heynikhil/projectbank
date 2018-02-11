@@ -136,7 +136,7 @@ router.post('/register', (req, res) => {
               <br> <br>
               Thank You`
           }
-          mail.sendMail(msg);
+          smtpTransport.sendMail(msg);
           req.flash('success_msg', 'Please Check Your Mail');
           res.redirect('/users/login');
         }
@@ -282,6 +282,9 @@ router.post('/reset/:token', function (req, res) {
 //get Dashboard
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
   res.render('users/dashboard');
+});
+router.get('/profile', ensureAuthenticated, (req, res) => {
+  res.render('users/profile');
 });
 
 

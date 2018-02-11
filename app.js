@@ -62,7 +62,9 @@ app.use('/users',users)
 app.get('/',(req,res)=>{
   res.render('users/login')
 });
-
+app.get('*', function (req, res) {
+  res.render('users/404');
+});
 const port = 3000;
 app.listen(port, ()=>{
   console.log(`Server Started on port:${port}`);
