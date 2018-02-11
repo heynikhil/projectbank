@@ -1,21 +1,20 @@
-const express = require('express'),
- mongoose = require('mongoose'),
- jwt = require('jsonwebtoken'),
- bcrypt = require('bcryptjs'),
- request = require('request'),
- nodemailer = require('nodemailer'),
- router = express.Router(),
- passport = require('passport');
-require('../models/user');
-const User = mongoose.model('users');
+const express = require('express');
+const mongoose = require('mongoose');
+// User = require('../models/user.js');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const request = require('request');
+const passport = require('passport');
 const sgMail = require('@sendgrid/mail');
 const async = require('async');
 const crypto = require('crypto');
 const http = require('http');
 const { ensureAuthenticated } = require('../helpers/auth');
+const nodemailer = require('nodemailer');
+const router = express.Router();
 
-
-
+require('../models/user');
+const User = mongoose.model('users');
 
 //GET login
 router.get('/login', (req, res) => {
@@ -112,7 +111,7 @@ router.post('/register', (req, res) => {
               newUser.save();
             })
           });
-          var smtpTransport = nodemailer.createTransport( {
+          var smtpTransport = nodemailer.createTransport({
             service: 'SendGrid',
             auth: {
               user: 'nikhil1337',
@@ -137,7 +136,7 @@ router.post('/register', (req, res) => {
               <br> <br>
               Thank You`
           }
-          smtpTransport.sendMail(msg);
+          mail.sendMail(msg);
           req.flash('success_msg', 'Please Check Your Mail');
           res.redirect('/users/login');
         }

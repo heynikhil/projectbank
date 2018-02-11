@@ -1,18 +1,20 @@
-const express = require('express'),
-  path = require('path'),
-  bodyParser = require('body-parser'),
-  passport = require('passport'),
-  cors = require('cors'),
-  mongoose = require('mongoose'),
-  exphbs = require('express-handlebars'),
-  methodOverride = require('method-override'),
-  flash = require('connect-flash'),
-  session = require('express-session'),
-  app = express(),
-  db = require('./config/database'),
-  users = require('./routes/users');
+const express = require('express');
+const  path = require('path');
+const  bodyParser = require('body-parser');
+const  passport = require('passport');
+const  cors = require('cors');
+const  mongoose = require('mongoose');
+const  exphbs = require('express-handlebars');
+const  methodOverride = require('method-override');
+const  flash = require('connect-flash');
+const  session = require('express-session');
+const  app = express();
+//load routers
+const users = require('./routes/users');
+//passport
 require('./config/passport')(passport);
-
+//database config
+const db = require('./config/database');
 
 //mongo Connection
 mongoose.connect(db.mongoURI);
