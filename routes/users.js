@@ -136,7 +136,7 @@ router.post('/register', (req, res) => {
               <br> <br>
               Thank You`
           }
-          mail.sendMail(msg);
+          smtpTransport.sendMail(msg);
           req.flash('success_msg', 'Please Check Your Mail');
           res.redirect('/users/login');
         }
