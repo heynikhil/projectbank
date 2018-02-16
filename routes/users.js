@@ -12,6 +12,7 @@ const http = require('http');
 const { ensureAuthenticated } = require('../helpers/auth');
 const nodemailer = require('nodemailer');
 const router = express.Router();
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 require('../models/user');
 const User = mongoose.model('users');
