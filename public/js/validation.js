@@ -6,12 +6,12 @@ $('#inputPassword').keyup(function (e) {
   var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
   var enoughRegex = new RegExp("(?=.{6,}).*", "g");
   if (false == enoughRegex.test($(this).val())) {
-    $('#pwC').html('Enter More Characters').css('color', 'red');
+    $('#pwC').html('Weak').css('color', 'red');
   } else if (strongRegex.test($(this).val())) {
     $('#pwC').html('Strong').css('color', 'green');
 
   } else if (mediumRegex.test($(this).val())) {
-    $('#pwC').html('Medium').css('color', 'green');
+    $('#pwC').html('Medium').css('color', 'yellow');
   } else {
     $('#pwC').html('Weak').css('color', 'red');
   }
@@ -21,7 +21,7 @@ $('#inputPassword').keyup(function (e) {
 //Password Matching
 $('#inputPassword, #inputPassword2').on('keyup', function () {
   if ($('#inputPassword2').val() === ''){
-    $('#message').html('Please Enter Passowrd').css('color', 'red');
+    $('#message').html('Please Enter Password').css('color', 'red');
   }
   else if ($('#inputPassword').val() != $('#inputPassword2').val()) {
     $('#message').html('Password is Not Matching').css('color', 'red');
